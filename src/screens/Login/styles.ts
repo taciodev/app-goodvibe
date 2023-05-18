@@ -1,74 +1,43 @@
-import styled from 'styled-components/native';
-import { Feather } from '@expo/vector-icons';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
+  justify-content: center;
+  align-items: center;
+
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
 `;
 
-export const Header = styled.View`
-  width: 100%;
-  height: ${RFPercentage(14)}px;
+export const Area = styled.View`
+  align-items: center;
+`;
 
-  background-color: ${({ theme }) => theme.COLORS.PRIMARY};
+export const Title = styled.Text`
+  color: ${({ theme }) => theme.COLORS.PRIMARY};
 
-  flex-direction: row;
+  margin-bottom: 12px;
+
+  font-family: ${({ theme }) => theme.FONTS.BOLD};
+  font-size: ${RFValue(24)}px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+`;
+
+export const Button = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
+
+  width: ${RFPercentage(42)}px;
+
+  padding: 12px 0;
+  margin-bottom: 12px;
+
+  border: 2px solid ${({ theme }) => theme.COLORS.PRIMARY};
+  border-radius: 12px;
+  background-color: ${({ theme }) => theme.COLORS.PRIMARY_LIGHT};
 `;
 
-export const UserWrapper = styled.View`
-  width: 100%;
-
-  padding: 0 24px;
-
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+export const TextButton = styled.Text`
+  font-family: ${({ theme }) => theme.FONTS.MEDIUM};
 `;
-
-export const UserInfo = styled.View`
-  flex-direction: row;
-  align-items: center;
-`;
-
-export const Photo = styled.Image`
-  width: ${RFValue(48)}px;
-  height: ${RFValue(48)}px;
-
-  border-radius: 10px;
-`;
-
-export const User = styled.View`
-  margin-left: 17px;
-`;
-
-export const UserGreeting = styled.Text`
-  color: ${({ theme }) => theme.COLORS.SHAPE};
-
-  font-size: ${RFValue(12)}px;
-  font-family: ${({ theme }) => theme.FONTS.REGULAR};
-`;
-
-export const UserName = styled.Text`
-  color: ${({ theme }) => theme.COLORS.SHAPE};
-
-  font-size: ${RFValue(12)}px;
-  font-family: ${({ theme }) => theme.FONTS.BOLD};
-`;
-
-export const Icon = styled(Feather)`
-  color: ${({ theme }) => theme.COLORS.SECONDARY};
-  font-size: ${RFValue(24)}px;
-`;
-
-export const Feed = styled.View`
-  flex: 1;
-  padding: 0 24px;
-
-  margin-top: ${RFPercentage(2)}px;
-`;
-
-
-

@@ -8,10 +8,9 @@ import {
   Poppins_700Bold
 } from '@expo-google-fonts/poppins';
 
-import { Home } from './src/screens/Home';
+import { Routes } from './src/routes';
 
 import theme from './src/global/styles/theme';
-import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -26,7 +25,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <Routes />
     </ThemeProvider>
   );
 }

@@ -1,13 +1,45 @@
 import React from 'react';
+import { Alert } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import {
-  Container
+  Container,
+  Area,
+  Title,
+  Button,
+  TextButton
 } from './styles';
 
-export function Home() {
+export function Login() {
+  const navigation = useNavigation();
+
+  const openScreen = () => {
+    navigation.navigate('home');
+  }
+
+  const pressHandler = () => {
+    Alert.alert("Alerta", "Botão pressionado", [
+      { text: "Ok", style: 'default' }
+    ])
+  }
 
   return (
     <Container>
+      <Area>
+        <Title>
+          Login
+        </Title>
+        <Button onPress={() => openScreen()}>
+          <TextButton>
+            Get started
+          </TextButton>
+        </Button>
+        <Button onPress={() => pressHandler()}>
+          <TextButton>
+            Alert
+          </TextButton>
+        </Button>
+      </Area>
     </Container>
   );
 }
