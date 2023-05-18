@@ -15,13 +15,13 @@ export const Header = styled.View`
 
   flex-direction: row;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 `;
 
 export const UserWrapper = styled.View`
   width: 100%;
 
-  padding: 12px 24px;
+  padding: 0 24px;
 
   flex-direction: row;
   align-items: center;
