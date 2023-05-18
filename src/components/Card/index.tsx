@@ -1,5 +1,5 @@
 import React from 'react'
-import LottieView from "lottie-react-native";
+import LottieView, { } from "lottie-react-native";
 
 import {
   Container,
@@ -19,14 +19,14 @@ type Props = {
 export function Card({ username }: Props) {
   const [countLike, setCountLike] = React.useState<number>(1);
   const [like, setLike] = React.useState<boolean>(true);
-  const animation = React.useRef(null);
+  const animation = React.useRef<LottieView | null>(null);
 
   React.useEffect(() => {
     if (like) {
-      animation.current.play(0, 0);
+      animation.current?.play(0, 0);
       setCountLike((state) => state - 1);
     } else {
-      animation.current.play(0, 94);
+      animation.current?.play(0, 94);
       setCountLike((state) => state + 1)
     }
   }, [like]);
