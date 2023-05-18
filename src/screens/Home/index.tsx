@@ -17,16 +17,18 @@ import {
   Feed,
 } from './styles';
 
+import { TypeUser } from '../../@types/TypeUser';
+
 export function Home() {
-  const [posts, setPosts] = React.useState()
+  const [users, setUsers] = React.useState<[TypeUser]>();
 
   React.useEffect(() => {
-    getPosts();
+    getUsers();
   }, []);
 
-  const getPosts = async () => {
+  const getUsers = async () => {
     const { data } = await axios.get("https://jsonplaceholder.typicode.com/users")
-    setPosts(data);
+    setUsers(data);
   }
 
   return (
@@ -49,8 +51,8 @@ export function Home() {
 
       <Feed>
         <FlatList
-          data={posts}
-          keyExtractor={item => item.id}
+          data={users}
+          keyExtractor={item => item.username}
           renderItem={({ item }) => <Card key={item.id} username={item.username} />}
           showsVerticalScrollIndicator={false}
         />

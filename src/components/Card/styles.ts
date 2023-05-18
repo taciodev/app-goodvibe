@@ -1,5 +1,4 @@
 import { RFValue } from "react-native-responsive-fontsize";
-import { AntDesign } from '@expo/vector-icons';
 import styled from "styled-components/native";
 
 export const Container = styled.View`
@@ -29,22 +28,25 @@ export const UserName = styled.Text`
   font-family: ${({ theme }) => theme.FONTS.BOLD};
 `;
 
-
-
 export const Body = styled.Text`
   margin-top: 12px;
-  margin-bottom: 8px;
   
   font-size: ${RFValue(8)}px;
   font-family: ${({ theme }) => theme.FONTS.REGULAR};
 `;
 
 export const Footer = styled.View`
+  margin-top: -20px;
+
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
 `;
 
-export const Icon = styled(AntDesign)`
-  font-size: ${RFValue(14)}px;
+export const ButtonLike = styled.Text`
+`;
+
+export const CountLike = styled.Text`
+  margin-top: 12px;
+  font-family: ${({ theme }) => theme.FONTS.MEDIUM};
 `;

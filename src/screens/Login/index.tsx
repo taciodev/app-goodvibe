@@ -31,12 +31,12 @@ export function Login() {
         </Title>
         <Button onPress={() => openScreen()}>
           <TextButton>
-            Get started
+            Entrar
           </TextButton>
         </Button>
         <Button onPress={() => pressHandler()}>
           <TextButton>
-            Alert
+            Alerta
           </TextButton>
         </Button>
       </Area>

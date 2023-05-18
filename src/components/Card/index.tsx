@@ -1,4 +1,5 @@
 import React from 'react'
+import LottieView from "lottie-react-native";
 
 import {
   Container,
@@ -7,7 +8,8 @@ import {
   Header,
   Footer,
   Body,
-  Icon
+  CountLike,
+  ButtonLike
 } from './styles'
 
 type Props = {
@@ -15,6 +17,20 @@ type Props = {
 }
 
 export function Card({ username }: Props) {
+  const [countLike, setCountLike] = React.useState<number>(1);
+  const [like, setLike] = React.useState<boolean>(true);
+  const animation = React.useRef(null);
+
+  React.useEffect(() => {
+    if (like) {
+      animation.current.play(0, 0);
+      setCountLike((state) => state - 1);
+    } else {
+      animation.current.play(0, 94);
+      setCountLike((state) => state + 1)
+    }
+  }, [like]);
+
   return (
     <Container>
       <Header>
@@ -29,10 +45,19 @@ export function Card({ username }: Props) {
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis vitae molestias, suscipit vero possimus in, doloremque, excepturi est architecto dolores aliquid .
       </Body>
       <Footer>
-        <Icon name="like2" />
-        <Icon name="download" />
-        <Icon name="sync" />
-        <Icon name="close" />
+        <ButtonLike onPress={() => setLike(!like)}>
+          <LottieView
+            source={require('../../assets/like.json')}
+            autoPlay={false}
+            loop={false}
+            style={{ width: 70, height: 70 }}
+            resizeMode="cover"
+            ref={animation}
+          />
+        </ButtonLike>
+        <CountLike>
+          {countLike}
+        </CountLike>
       </Footer>
     </Container>
   )
