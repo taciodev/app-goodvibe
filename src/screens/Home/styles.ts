@@ -59,7 +59,7 @@ export const UserName = styled.Text`
 `;
 
 export const Icon = styled(Feather)`
-  color: ${({ theme }) => theme.COLORS.SECONDARY};
+  color: ${({ theme }) => theme.COLORS.BACKGROUND};
   font-size: ${RFValue(24)}px;
 `;
 
